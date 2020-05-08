@@ -7,10 +7,8 @@ public class Main extends PApplet {
 	
 	
 	
-	Cuadrado[][] cuadd;
+	Cuadrado[][] cuadd = new Cuadrado[20][30];
 
-	int ver=20;
-	int hor=30;
 	
 
 	
@@ -27,16 +25,14 @@ public class Main extends PApplet {
 	public void setup() {
 		
 		
-		cuadd = new Cuadrado [ver][hor];
 		
 		
-		for(int i=0; i<ver; i++) {
-			for(int j = 0; j<hor; j++) {	
-				if (i % 2 == 0){
-					cuadd[i][j] = new Cuadrado (i*30, j*30,2,this);
-				}else {
-					cuadd[i][j] = new Cuadrado (i*30, j*30,1,this);
-				}
+		for(int i=0; i<20; i++) {
+			for(int j = 0; j<30; j++) {	
+				
+				
+				cuadd[i][j] = new Cuadrado (j*20, i*20,this);
+				
 				
 			}
 		}
@@ -49,15 +45,23 @@ public class Main extends PApplet {
 	public void draw() {
 		background(190);
 		
-		
-		
-		for(int i=0; i<ver; i++) {
-			for(int j = 0; j<hor; j++) {
-			
-				cuadd[i][j].pintar();
-			
-			}
-		}
-		
+		  for (int i = 0; i < 20; i++) {
+	            for (int j = 0; j < 30; j++) {
+
+	                if(i%2==0) {
+	                    if (j%2==0) 
+	                    cuadd[i][j].pintar(0);
+	                    else cuadd[i][j].pintar(1);
+	                    } else {
+
+	                    if (j%2==0) 
+	                        cuadd[i][j].pintar(1);
+	                    else cuadd[i][j].pintar(0);
+	                    }
+	            }
+	
+		  }
 	}
 }
+	     
+	     

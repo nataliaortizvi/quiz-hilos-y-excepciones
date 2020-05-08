@@ -10,12 +10,11 @@ public class Cuadrado implements Runnable{
 	private int tam;
 	private int color;
 	
-	public Cuadrado(int px, int py, int color, PApplet app) {
+	public Cuadrado(int px, int py, PApplet app) {
 		this.app = app;
 		this.px = px;
 		this.py = py;
-		this.tam = 30;
-		this.color = color;
+		this.tam = 20;
 	}
 	
 	public void run() {
@@ -24,21 +23,24 @@ public class Cuadrado implements Runnable{
 	}
 	
 	
-	public void pintar() {
-		if(this.color == 1) {
-			app.fill(0);
-			app.rect(this.px,this.py,this.tam,this.tam);
-			
-		}
-		if(this.color == 2) {
+	public void pintar(int color) {
+		if(color == 1) {
 			app.fill(255);
-			app.rect(this.px,this.py,this.tam,this.tam);
+		
+			
+		}else {
+		
+			app.fill(0);
+			
 			
 		}
+		app.rect(this.px,this.py,this.tam,this.tam);
 		
 	}
 	
+	
 	public void mover() {
+		this.py += 30;
 		
 	}
 	
