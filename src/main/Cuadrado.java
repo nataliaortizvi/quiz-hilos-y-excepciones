@@ -43,7 +43,7 @@ public class Cuadrado implements Runnable{
 	
 	
 	public void mover() {
-		this.py -= 30;
+		this.py += vel;
 		
 		if(this.py >= -20) {
 			this.vel*= -1;
