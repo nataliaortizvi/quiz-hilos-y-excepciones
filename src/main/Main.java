@@ -62,6 +62,27 @@ public class Main extends PApplet {
 	
 		  }
 	}
+	
+	public void mousePressed() {
+		
+		for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 30; j++) {
+
+                if(i%2==0) {
+                    
+
+                    if (j%2==0) 
+                        
+                    	new Thread (cuadd[i][j]).start();
+                    }
+            }
+
+	  }
+			
+		
+		
+		
+	}
 }
 	     
 	     

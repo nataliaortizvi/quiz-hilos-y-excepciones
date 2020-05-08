@@ -9,15 +9,18 @@ public class Cuadrado implements Runnable{
 	private int py;
 	private int tam;
 	private int color;
+	private int vel;
 	
 	public Cuadrado(int px, int py, PApplet app) {
 		this.app = app;
 		this.px = px;
 		this.py = py;
 		this.tam = 20;
+		this.vel = 3;
 	}
 	
 	public void run() {
+		mover();
 		// TODO Auto-generated method stub
 		
 	}
@@ -40,7 +43,14 @@ public class Cuadrado implements Runnable{
 	
 	
 	public void mover() {
-		this.py += 30;
+		this.py -= 30;
+		
+		if(this.py >= -20) {
+			this.vel*= -1;
+		}
+		if (this.py <= 20) {
+	            this.vel *= -1;
+	    }
 		
 	}
 	
